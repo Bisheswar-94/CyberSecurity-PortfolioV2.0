@@ -225,7 +225,7 @@ function printOutput(text){
 
 }
 
-function execute(cmd){
+function execute(cmd){ 
 
     switch(cmd){
 
@@ -331,6 +331,130 @@ function execute(cmd){
 
             break;
 
+            case "hack":
+
+                    printOutput(`
+                Initializing attack...
+
+                ████████████████████ 100%
+
+                Connecting to target...
+
+                ERROR
+
+                Ethical Hacking Only.
+
+                Access Blocked.
+                    `);
+
+    break;
+
+    case "matrix":
+
+                document.body.style.filter = "hue-rotate(90deg)";
+
+                printOutput("Matrix Mode Enabled.");
+
+                break;
+
+    case "normal":
+
+                document.body.style.filter = "none";
+
+                printOutput("Matrix Mode Disabled.");
+
+    break;
+
+    case "coffee":
+
+                printOutput(`
+            Coffee Level
+
+            ████████████████████
+
+            999%
+
+            System Ready.
+            `);
+
+    break;
+
+    case "sudo":
+
+            printOutput(`
+        Permission denied.
+
+        Nice try 😄
+        `);
+
+    break;
+
+    case "whoareyou":
+
+            printOutput(`
+        Hello Recruiter 👋
+
+        Welcome to my Cybersecurity Portfolio.
+
+        Feel free to explore my projects and skills.
+        `);
+
+    break;
+
+    case "social":
+
+            printOutput(`
+        GitHub
+
+        https://github.com/Bisheswar-94
+
+        LinkedIn
+
+        https://www.linkedin.com/in/bisheswar-bhattacharjee-4810a1337/
+
+        Email
+
+        BisheswarBhattacharjee@gmail.com
+        `);
+
+    break;
+
+    case "motd":
+
+            printOutput(`
+        =================================
+
+        Welcome to CyberPortfolio v2.0
+
+        Author : Bisheswar Bhattacharjee
+
+        Cybersecurity Engineer
+
+        =================================
+        `);
+
+    break;
+
+    case "exit":
+
+            printOutput(`
+        You cannot leave the Cyber World.
+
+        Connection secured.
+        `);
+
+    break;
+
+    case "clearlogs":
+
+            printOutput(`
+        Security logs cleared.
+
+        (No real logs were harmed 😄)
+        `);
+
+    break;
+    
         default:
 
             printOutput(

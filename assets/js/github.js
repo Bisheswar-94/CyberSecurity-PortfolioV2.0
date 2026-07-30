@@ -1,87 +1,51 @@
-// =======================================
-// GitHub Projects Loader
-// =======================================
+console.log("GitHub JS Loaded");
 
-const GITHUB_USERNAME = "Bisheswar-94";
+const username = "Bisheswar-94";
 
-document.addEventListener("DOMContentLoaded", loadGitHubProjects);
+document.addEventListener("DOMContentLoaded", () => {
 
-async function loadGitHubProjects() {
+    const projectContainer = document.querySelector("#projects .cards");
 
-    const container = document.querySelector("#projects .cards");
+    console.log("Container:", projectContainer);
 
-    if (!container) {
-        console.error("Projects container not found.");
+    if (!projectContainer) {
+        console.error("Project container not found!");
         return;
     }
 
-    container.innerHTML = `
-        <div class="loading">
-            Loading GitHub Projects...
-        </div>
-    `;
+    fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
+        .then(response => {
+            console.log("Response:", response.status);
+            return response.json();
+        })
+        .then(repos => {
 
-    try {
+            console.log("Repositories:", repos);
 
-        const response = await fetch(
-            `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=8`
-        );
+            projectContainer.innerHTML = "";
 
-        if (!response.ok) {
-            throw new Error("Unable to fetch GitHub repositories.");
-        }
+            repos.slice(0, 8).forEach(repo => {
 
-        const repos = await response.json();
+                const card = document.createElement("div");
+                card.className = "card";
 
-        container.innerHTML = "";
+                card.innerHTML = `
+                    <h3>${repo.name.replace(/-/g, " ")}</h3>
 
-        repos.forEach(repo => {
+                    <p>${repo.description || "Cybersecurity Project"}</p>
 
-            const card = document.createElement("div");
-            card.className = "card";
+                    <a href="${repo.html_url}" target="_blank" class="btn">
+                        View Repository
+                    </a>
+                `;
 
-            card.innerHTML = `
-                <h3>${repo.name.replace(/-/g, " ")}</h3>
+               console.log(card);
+               projectContainer.appendChild(card);
+            });
 
-                <p>
-                    ${repo.description || "Cybersecurity Project"}
-                </p>
-
-                <div class="repo-info">
-
-                    <span>⭐ ${repo.stargazers_count}</span>
-
-                    <span>
-                        ${repo.language || "Unknown"}
-                    </span>
-
-                </div>
-
-                <a
-                    href="${repo.html_url}"
-                    target="_blank"
-                    class="btn"
-                >
-                    View Repository
-                </a>
-            `;
-
-            container.appendChild(card);
-
+        })
+        .catch(error => {
+            console.error("Fetch Error:", error);
         });
 
-    } catch (error) {
-
-        console.error(error);
-
-        container.innerHTML = `
-            <div class="card">
-                <h3>Unable to Load Projects</h3>
-
-                <p>
-                    GitHub API is unavailable or rate limit exceeded.
-                </p>
-            </div>
-        `;
-    }
-}
+});
