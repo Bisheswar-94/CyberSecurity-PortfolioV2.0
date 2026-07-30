@@ -1,0 +1,6 @@
+# Ignore all HTML files
+*.html
+
+# But keep these HTML files tracked
+!index.html
+!terminal.html
