@@ -1,0 +1,283 @@
+/* ============================================
+        GLOBAL ANIMATIONS
+============================================ */
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+}
+
+100%{
+opacity:1;
+}
+
+}
+
+@keyframes fadeUp{
+
+0%{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+@keyframes fadeLeft{
+
+0%{
+
+opacity:0;
+
+transform:translateX(-70px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+@keyframes fadeRight{
+
+0%{
+
+opacity:0;
+
+transform:translateX(70px);
+
+}
+
+100%{
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+
+}
+
+/* ============================================
+            FLOATING IMAGE
+============================================ */
+
+@keyframes floating{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-18px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ============================================
+          GLOW PULSE
+============================================ */
+
+@keyframes glow{
+
+0%{
+
+box-shadow:
+0 0 5px cyan,
+0 0 10px cyan;
+
+}
+
+50%{
+
+box-shadow:
+0 0 20px cyan,
+0 0 50px cyan;
+
+}
+
+100%{
+
+box-shadow:
+0 0 5px cyan,
+0 0 10px cyan;
+
+}
+
+}
+
+/* ============================================
+         ROTATING BORDER
+============================================ */
+
+@keyframes borderRotate{
+
+0%{
+
+transform:rotate(0deg);
+
+}
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* ============================================
+          BUTTON HOVER
+============================================ */
+
+.btn:hover{
+
+animation:glow 1.2s infinite;
+
+}
+
+/* ============================================
+          HERO CONTENT
+============================================ */
+
+.hero-left{
+
+animation:fadeLeft 1s ease;
+
+}
+
+.hero-right{
+
+animation:fadeRight 1.2s ease;
+
+}
+
+.photo-frame{
+
+animation:
+
+floating 4s ease-in-out infinite;
+
+}
+
+/* ============================================
+          SECTION TITLE
+============================================ */
+
+.section-title{
+
+animation:fadeUp .8s ease;
+
+}
+
+/* ============================================
+            CARD ANIMATION
+============================================ */
+
+.card{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:.8s;
+
+}
+
+.card.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ============================================
+         STATS ANIMATION
+============================================ */
+
+.stat-card{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:.8s;
+
+}
+
+.stat-card.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* ============================================
+         SOCIAL ICONS
+============================================ */
+
+.socials a{
+
+transition:.35s;
+
+}
+
+.socials a:hover{
+
+transform:translateY(-8px) scale(1.15);
+
+}
+
+/* ============================================
+            NAV LINKS
+============================================ */
+
+nav a{
+
+transition:.35s;
+
+}
+
+nav a:hover{
+
+letter-spacing:1px;
+
+}
+
+/* ============================================
+            FOOTER
+============================================ */
+
+footer{
+
+animation:fadeIn 1.2s;
+
+}
