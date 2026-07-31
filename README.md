@@ -1,28 +1,3 @@
-Still working on the page 
-
-
-
-Working commands: For Terminal 
-
-
-help
-whoami
-skills
-projects
-education
-contact
-goals
-certs
-pwd
-date
-neofetch
-github
-linkedin
-resume
-clear
-
-
-
 🛡️ CyberPortfolio v2.0
 
 A futuristic, hacker-inspired cybersecurity portfolio built with HTML, CSS, and JavaScript.
@@ -208,3 +183,29 @@ This project is licensed under the MIT License.
 Built with ❤️ by Bisheswar Bhattacharjee
 
 </div>
+
+Still working on the page 
+
+
+
+Working commands: For Terminal 
+
+
+help
+whoami
+skills
+projects
+education
+contact
+goals
+certs
+pwd
+date
+neofetch
+github
+linkedin
+resume
+clear
+
+
+
